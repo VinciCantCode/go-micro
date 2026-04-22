@@ -13,12 +13,12 @@ type jsonResponse struct {
 
 func (app *Config) Broker(w http.ResponseWriter, r *http.Request) {
 
-	payload := jsonResponse{
+	payloadd := jsonResponse{
 		Error:   false,
 		Message: "Hit the broker",
 	}
 
-	out, _ := json.MarshalIndent(payload, "[prefix]", "\t")
+	out, _ := json.MarshalIndent(payloadd, "[prefix]", "\t")
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusAccepted)
 	w.Write(out)
